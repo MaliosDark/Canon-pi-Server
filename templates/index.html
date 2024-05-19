@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+</head>
+<body>
+    <h1>Galería de Imágenes</h1>
+    <div>
+        {% for file in files %}
+            <div>
+                <img src="/static/{{ file }}" width="300">
+                <br>
+                <a href="/download/{{ file }}">Descargar</a>
+                <a href="/delete/{{ file }}">Eliminar</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

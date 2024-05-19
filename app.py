@@ -5,6 +5,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def gallery():
+    # Verificar si la carpeta 'static' existe, si no, crearla
+    if not os.path.exists('static'):
+        os.makedirs('static')
     files = os.listdir('static')
     files.sort(reverse=True)
     return render_template('index.html', files=files)
